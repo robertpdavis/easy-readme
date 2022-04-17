@@ -1,7 +1,9 @@
-# My Test Project
+# Test
+
+[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Description
-Short little project
+Test
 
 ## Table of Contents
 - [Installation](#installation)
@@ -14,24 +16,24 @@ Short little project
 
 
 ## Installation
->Clone to local repository >Initialise NPM >Install Inquirer
+fdgafg
 
 ## Usage
-Run by node index.js
+fdgfagfd
 
 ## Credits
-undefined
+dfgssg
 
 ## License
-MIT License
+BSD 3 Clause
 
 ## Contributing
-Contact me at robertpdavis@optusnet.com.au
+fadfgadg
 
 ## Tests
-Default template can be created by typing 'Create Default" as project name.
+adfgag
 
 ## Questions
-robertpdavis
-robertpdavis
+* Github: [robertpdavis](https://github.com/robertpdavis)
+* Email: robertpdavis@optusnet.com.au
 
