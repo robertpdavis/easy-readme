@@ -1,7 +1,7 @@
-# Easy Readme Content Creator
+# My Test Project
 
 ## Description
-Creates README.md file by asking multiple questions to the user.
+Short little project
 
 ## Table of Contents
 - [Installation](#installation)
@@ -14,23 +14,24 @@ Creates README.md file by asking multiple questions to the user.
 
 
 ## Installation
-fff
+>Clone to local repository >Initialise NPM >Install Inquirer
 
 ## Usage
-fff
+Run by node index.js
 
 ## Credits
-fff
+undefined
 
 ## License
-fff
+MIT License
 
 ## Contributing
-fff
+Contact me at robertpdavis@optusnet.com.au
 
 ## Tests
-fff
+Default template can be created by typing 'Create Default" as project name.
 
 ## Questions
-xxx
-xxx
+robertpdavis
+robertpdavis
+

@@ -1,0 +1,22 @@
+{
+  "name": "easy-readme",
+  "version": "1.0.0",
+  "description": "Simple README.md file creator.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertpdavis/easy-readme.git"
+  },
+  "author": "Rob Davis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robertpdavis/easy-readme/issues"
+  },
+  "homepage": "https://github.com/robertpdavis/easy-readme#readme",
+  "dependencies": {
+    "inquirer": "^8.2.2"
+  }
+}
