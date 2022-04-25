@@ -14,7 +14,7 @@ const questions = [
         //validate input
         validate(value) {
             if (value === "")
-                return "A project title is required";
+                return "A project title is required.";
             else {
                 return true;
             }
@@ -27,7 +27,7 @@ const questions = [
         //validate input
         validate(value) {
             if (value === "")
-                return "A project description is required";
+                return "A project description is required.";
             else {
                 return true;
             }
@@ -37,26 +37,58 @@ const questions = [
         type: 'input',
         message: 'Provide details on how to install the application:',
         name: 'installation',
+        //validate input
+        validate(value) {
+            if (value === "")
+                return "Provide details of how to install the project.";
+            else {
+                return true;
+            }
+        },
     },
     {
         type: 'input',
         message: 'Provide details on how the application is used:',
         name: 'usage',
+        //validate input
+        validate(value) {
+            if (value === "")
+                return "Provide details of how to the application is used or type 'skip'.";
+            else {
+                return true;
+            }
+        },
     },
     {
         type: 'input',
-        message: 'Provide details of others who contributed (first last github  seperated by comma e.g Rob Davis robertpdavis,Joe Blow jowblow):',
+        message: 'Provide details of others who contributed (first last githubusername seperated by comma e.g First Second gitubuser1,First Second gitubuser2):',
         name: 'credits',
     },
     {
         type: 'input',
         message: 'Provide details on how others can contribute to the project:',
         name: 'contribute',
+        //validate input
+        validate(value) {
+            if (value === "")
+                return "Provide details of how others can contribute to the project or type 'skip'.";
+            else {
+                return true;
+            }
+        },
     },
     {
         type: 'input',
         message: 'Provide details on any tests that can be used for the application:',
         name: 'tests',
+        //validate input
+        validate(value) {
+            if (value === "")
+                return "Provide details on what tests can be used for the application or type 'skip'.";
+            else {
+                return true;
+            }
+        },
     },
     {
         type: 'list',
@@ -72,16 +104,40 @@ const questions = [
             'Eclipse Public License 2.0'
         ],
         name: 'licence',
+        //validate input
+        validate(value) {
+            if (value === "")
+                return "You must assign a licence type to your project.";
+            else {
+                return true;
+            }
+        },
     },
     {
         type: 'input',
         message: 'Enter in your GitHub user name:',
         name: 'github',
+        //validate input
+        validate(value) {
+            if (value === "")
+                return "You must provide a github user name.";
+            else {
+                return true;
+            }
+        },
     },
     {
         type: 'input',
         message: 'Enter in your email address:',
         name: 'email',
+        //validate input
+        validate(value) {
+            if (value === "")
+                return "You must provide an email address.";
+            else {
+                return true;
+            }
+        },
     },
 ];
 
@@ -129,6 +185,19 @@ function createMD(response) {
             break;
     }
 
+    //Compile contributors
+    let contributor;
+    let credits = "";
+    if (response.credits === "" || response.credits === undefined) {
+        credits = "There were no other contributors to this project";
+    } else {
+        contributor = response.credits.split(',');
+
+        contributor.forEach((value, index, array) => {
+            credits = credits + `<br>${value}`;
+        })
+    }
+
     //Create README text file using template literals to populate entered data
     mdText =
         `# ${response.title}
@@ -152,23 +221,25 @@ ${response.description}
 ${response.installation}
 
 ## Usage
-${response.usage}
+${response.usage === "skip" ? "No usage details provided." : response.usage}
 
 ## Credits
-${response.credits}
+${credits}
 
 ## License
 ${response.licence}
 
 ## Contributing
-${response.contribute}
+${response.contribute === "skip" ? "No contribution details provided." : response.contribute}
 
 ## Tests
-${response.tests}
+${response.tests === "skip" ? "No test details provided." : response.tests}
 
 ## Questions
 * Github: [${response.github}](https://github.com/${response.github})
 * Email: ${response.email}
+
+Created by ['Easy Readme'](https://github.com/robertpdavis/easy-readme)
 
 `;
     return mdText;
