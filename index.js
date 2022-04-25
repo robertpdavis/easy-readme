@@ -194,7 +194,11 @@ function createMD(response) {
         contributor = response.credits.split(',');
 
         contributor.forEach((value, index, array) => {
-            credits = credits + `<br>${value}`;
+            if (array.length > 1) {
+                credits = credits + `${value}<br>`;
+            } else {
+                credits = credits + `${value}`;
+            }
         })
     }
 
@@ -226,7 +230,7 @@ ${response.usage === "skip" ? "No usage details provided." : response.usage}
 ## Credits
 ${credits}
 
-## License
+## Licence
 ${response.licence}
 
 ## Contributing
